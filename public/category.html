@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Products</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+
+    <!-- Load the Handlebars library. -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- Load the JS code for the page. -->
+    <script src="js/main.js" type="text/javascript"></script>
+
+    <!-- Load CSS stylesheet for the page. -->
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+
+    <!-- Create a HandleBars script. (https://handlebarsjs.com/guide/builtin-helpers.html) -->
+    <script id="subcategories-products-template" type="text/x-handlebars-template">
+
+        <!-- Subcategory radio buttons for filtering -->
+        <ul class="subCategiries__list">
+            <li class="subCategories">
+                <input type="radio" name="subCateg" value="All" id="subCateg" data-subcategory-id-radio="0">
+                <label for="subCateg">All</label>
+            </li>
+            {{#each list.[0]}}
+            <li class="subCategories">
+                <input type="radio" name="subCat" value={{title}} id="subCateg" data-subcategory-id-radio={{id}}>
+                <label for="subCateg">{{title}}</label>
+            </li>
+            {{/each}}
+        </ul>
+
+        <!-- Product List -->
+        <ul>
+            {{#each list.[1]}}
+            <li class="products" id="product" data-subcategory-id={{subcategory_id}} data-product-id={{id}}>
+                <h2>{{title}}</h2>
+                <img class="product_image" src={{image}} alt="product_sub-category">
+                <h3>Description: </h3>
+                <p class="description">{{description}}</p>
+                <p class="price">Price: <span>{{cost}},00$</span></p>
+                <button type="button" class="buy__button">Buy</button>
+            </li>
+            {{/each}}
+        </ul>
+        
+	</script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <picture class="banner">
+            <source media="(max-width:760px)" srcset="images/Wikishop_x05.gif">
+            <img class="index__banner" src="images/WikiShop.gif" alt="banner">
+        </picture>
+
+    </header>
+
+    <main>
+
+        <!-- Login form -->
+        <form class="login__form" method="post" action="/login">
+            <p>
+              <label for="username">Username: </label>
+              <input type="text" name="username" id="username" required>
+            </p>
+            <p>
+              <label for="password">Password: </label>
+              <input type="password" name="password" id="password" required>
+            </p>
+            <p>
+              <input type="submit" value="Login">
+            </p>
+        </form>
+
+        <h1 class="top__header">Products</h1>
+
+        <section id="sub-categories-products-list" class="list"></section>
+
+    </main>
+
+    <footer>
+        <section class="footer__top">
+            <section class="footer__contact__info">
+                <h3>Contact information:</h3>
+                <ul>
+                    <li><p>Call: <a href="tel:+302101234567">+30 210-123-4567</a></p></li>
+                    <li><p>E-mail: <a href="mailto:website@aueb.gr">website@aueb.gr</a></p></li>
+                </ul>
+            </section>
+    
+            <section class="footer__socials">
+                <h3>Or follow us on social media:</h3>
+                <ul class="footer__social__links">
+                    <li><a href="https://www.facebook.com/"><img src="images/footer/facebook.png" alt="facebook"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="images/footer/instagram.png" alt="instagram"></a></li>
+                    <li><a href="https://twitter.com/"><img src="images/footer/twitter.png" alt="twitter"></a></li>
+                    <li><a href="https://www.tiktok.com/"><img src="images/footer/tik-tok.png" alt="tiktok"></a></li>
+                    <li><a href="https://www.naver.com/"><img src="images/footer/naver.png" alt="naver"></a></li>
+                    <li><a href="https://www.youtube.com/"><img src="images/footer/youtube.png" alt="youtube"></a></li> 
+                </ul>
+            </section>
+        </section>
+        
+        <section class="footer__bottom">
+            <h6>Copyright &copy;2023 WikiShop.</h6>
+        </section>
+    </footer>
+
+</body>
+
+</html>

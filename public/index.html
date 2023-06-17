@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+
+    <!-- Load the Handlebars library. -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- Load the JS code for the page. -->
+    <script src="js/main.js" type="text/javascript"></script>
+
+    <!-- Load CSS stylesheet for the page. -->
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+
+    <!-- Create a HandleBars script. (https://handlebarsjs.com/guide/builtin-helpers.html) -->
+    <script id="categories-list-template" type="text/x-handlebars-template">
+
+        <!-- Categories List -->
+        <ul>
+            {{#each list}}
+            <li class="categories">
+                <h2>{{title}}</h2>
+                <a id="link" data-category-id={{id}} href="#"><img src={{img_url}} alt="product_category"></a>
+            </li>
+            {{/each}}
+        </ul>
+
+	</script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <picture class="banner">
+            <source media="(max-width:760px)" srcset="images/Wikishop_x05.gif">
+            <img class="index__banner" src="images/WikiShop.gif" alt="banner">
+        </picture>
+
+    </header>
+
+    <main>
+
+        <h1 class="top__header">Categories</h1>
+
+        <section id="categories-list" class="list"></section>
+
+    </main>
+
+    <footer>
+        <section class="footer__top">
+            <section class="footer__contact__info">
+                <h3>Contact information:</h3>
+                <ul>
+                    <li><p>Call: <a href="tel:+302101234567">+30 210-123-4567</a></p></li>
+                    <li><p>E-mail: <a href="mailto:website@aueb.gr">website@aueb.gr</a></p></li>
+                </ul>
+            </section>
+    
+            <section class="footer__socials">
+                <h3>Or follow us on social media:</h3>
+                <ul class="footer__social__links">
+                    <li><a href="https://www.facebook.com/"><img src="images/footer/facebook.png" alt="facebook"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="images/footer/instagram.png" alt="instagram"></a></li>
+                    <li><a href="https://twitter.com/"><img src="images/footer/twitter.png" alt="twitter"></a></li>
+                    <li><a href="https://www.tiktok.com/"><img src="images/footer/tik-tok.png" alt="tiktok"></a></li>
+                    <li><a href="https://www.naver.com/"><img src="images/footer/naver.png" alt="naver"></a></li>
+                    <li><a href="https://www.youtube.com/"><img src="images/footer/youtube.png" alt="youtube"></a></li> 
+                </ul>
+            </section>
+        </section>
+        
+        <section class="footer__bottom">
+            <h6>Copyright &copy;2023 WikiShop.</h6>
+        </section>
+    </footer>
+
+</body>
+
+</html>

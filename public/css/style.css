@@ -1,0 +1,771 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Everything inside here applies to every webpage.
+Box sizing is calculating  the width and height of the elements.*/
+* {
+    box-sizing: border-box;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Body */
+
+/* Editing the backgroung color of the webpage*/
+/* We have 3 cells in the grid : grid__header, grid__main and grid__footer and each one of the cells has a width of 1fr.
+Because we split the cells using frames the grid becomes responsive*/
+body {
+    /* appearance */
+    background-color: #333333;
+    color: #ccc;
+    font-family: sans-serif;
+
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*responsive*/
+    grid-template-areas:
+        "grid__header"
+        "grid__main"
+        "grid__footer";
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Header */
+
+/* Editing the header of the website */
+/* The grid__header is the first cell out of 3. We use grid-area to specify its location within the grid */
+header { 
+    /* grid*/
+    grid-area: grid__header;
+
+    /* appearance */
+    background-color: #24252a;
+}
+
+/* Editing the banner image in the header to be responsive */
+.banner img {
+    /* responsive */
+    width: 100%;
+
+    /* flex */
+    display: flex;
+
+    /* appearance */
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Main */
+
+/* Editing the font and color of the letters, as the space between the main of the website
+and the header */
+/* The grid__main is the second cell out of 3. We use grid-area to specify its location within the grid */
+main {
+    /* grid */
+    grid-area: grid__main;
+    
+    /* text */
+    text-align: center;
+}
+
+/* Editing the title at the top of each page */
+main h1 {
+    /* text */
+    font-size: 6vw;
+
+    /* position */
+    padding-bottom: 5%;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Footer */
+
+/* Editing the footer's website: adding the backround color, the font and color of the letters, the space bettween the box and the letters 
+the width and the height*/
+/* The grid__footer is the second cell out of 3. We use grid-area to specify its location within the grid */
+footer {
+    /* grid */
+    grid-area: grid__footer;
+   
+    /* appearance */
+    background-color: #24252a;
+
+    /* size */
+    height: auto; 
+    
+    /* text */
+    font-family: "Open Sans";
+    color: #ccc;
+
+    /* position */
+    padding-top: 20px;
+}
+
+/* Footer top contains the contact info and social media. We edit the position of them here */
+/* We use a flex container to place inside the social media pictures. We center the items along the line
+and in the cross-axis*/
+.footer__top {
+    /* flex */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+    /* text */
+    text-align: center;
+}
+
+/* Editing foter's h3 that is : "contact information" and "or follow us on social media" 
+We edit the size of the letters and the weight(meaning how bold they are), we make the first letter of each word capital and 
+edit the height of the line above them*/
+.footer__top h3 {
+    /* text */
+   font-size: 1.8rem;
+   font-weight: 400;
+   text-transform: capitalize;
+   line-height: 3rem;
+}
+
+/* Editing foter's p ("call" and "email") using ihneritance :
+We edit the max width of the text, the space between them and the size of the text*/
+.footer__top p {
+    /* size */
+    max-width: 500px;
+
+    /* position */
+    margin: 5px auto;
+
+    /* text */
+    font-size: 14px;
+    line-height: 28px;
+}
+
+
+/* Editing the space on the left and right of the contact information*/
+.footer__contact__info {
+    /* position */
+   margin: 0 60px;
+
+}
+/* Editing the space on the left and right of the social media*/
+.footer__socials {
+    /* position */
+    margin: 0 60px;
+}
+
+
+/* Removing the dots of the list on the phone and email */
+.footer__contact__info li {
+    /* text */
+   list-style: none;
+}
+
+/* We change the color of the links (phone and website) and their size */
+.footer__contact__info li a {
+    /* text */
+    font-size: 1.1rem;
+    color: #9fa6cc;
+}
+
+/* We change the color of the links (phone and website) when we hover over them*/
+.footer__contact__info li:hover a {
+    /* text */
+   color: aquamarine;
+}
+
+/* We edit the images of the social media in the footer: delete the dots of the list and edit the space between them and everything
+in the footer*/
+/* We use a flex container to place inside the social media pictures. We center the items along the line
+and in the cross-axis*/
+.footer__social__links {
+    /* flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* text */
+    list-style: none;
+
+    /* position */
+    margin: 1rem 0 1.5rem 0;
+}
+
+/* We edit the space between the images in the list using inheritance*/
+.footer__social__links li {
+    /* position */
+    margin: 0 10px;
+}
+
+/*We edit the height and width of the social media images using inheritance*/
+.footer__socials li img{
+    /* size */
+    width: 30px;
+    height: auto;
+}
+
+/*We edit the space of the "Copyright ©2022 VIOL. Designed By V&O" : we edit the backround
+color, the width, the space between the letters and the box and lastly we align the text
+in the center */
+.footer__bottom {
+    /* appearance */
+    background: #000;
+
+    /* size */
+    width: 100vw;
+
+    /* position */
+    padding: 8px 0;
+
+    /* text */
+    text-align: center;
+}
+
+/* We edit the text "Copyright ©2022 VIOL using inheritance. Designed By V&O" : we edit the size, the space
+between the words anf making sure the first letter of evey word is capital */
+.footer__bottom h6 {
+    /* text */
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* We remove the dots from the list and add space below each element  */
+.list li {
+    /* appearance */
+    list-style: none;
+
+    /* position */
+    padding-bottom: 7%;
+}
+
+/* We edit the text size of the title of each category */
+.list li h2 {
+    /* text */
+    font-size: 3.5vw;
+}
+
+/* We edit the appearance of the category's image by changing its border */
+.list li a img {
+    /* border */
+    border-radius: 7%;
+}
+
+/* We edit the width and the maximum width of the product's image as well as
+its appearance by changing its border */
+.product_image {
+    /* size */
+    width: 98%;
+    max-width: 600px;
+    height: auto;
+
+    /* border */
+    border-radius: 7%;
+}
+
+/* We edit the size and the height of the description header */
+.products h3 {
+    /* text */
+    font-size: 2vw;
+    line-height: 0.1;
+}
+
+/* We edit the product's description text size, its width and its position */
+.description {
+    /* text */
+    font-size: 1.3vw;
+
+    /* size */
+    max-width: 95%;
+    max-width: 580px;
+
+    /* position */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+/* We edit the text size of the product's price */
+.price {
+    /* text */
+    font-size: 2vw;
+}
+
+/* We edit the boldness of the product's price value */
+.price span {
+    /* text */
+    font-weight: bold;
+}
+
+/* We edit the size and the appearance of the buy button for each product and change the text's size */
+.buy__button {
+    /* text */
+    font-size: 200%;
+    font-weight: 600;
+    color: #ccc;
+
+    /* size */
+    width: 8%;
+    height: 56px;
+
+    /* appearance */
+    border-color: #347CB1;
+    border-radius: 28px;
+    background-color: #347CB1;
+}
+
+/* We add a shadow on behind the buy button when the user's cursor hovers over it */
+.buy__button:hover {
+    /* appearance */
+    background-color: #2a628b;
+}
+
+/* We edit the subcategories' list border, size and position. In addition we
+use flexbox to display the subcatgories' radio buttons horizontally */
+.subCategiries__list {
+    /* flex */
+    display: flex;
+    justify-content: center;
+
+    /* appearance */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+
+    /* size */
+    width: 90%;
+    max-width: 700px;
+
+    /* position */
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 7%;
+}
+
+/* We add space between the subcategories' buttons */
+.subCategiries__list li {
+    /* position */
+    padding: 3% 3%;
+}
+
+/* We edit the appearance, the size and the position of the login form */
+.login__form {
+    /* appearance */
+    border: double 3px rgba(204, 204, 204, 0.525) !important;
+    border-radius: 10px;
+
+    /* size */
+    max-width: 450px;
+
+    /* position */
+    margin-top: 2%;
+    justify-self:center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* We change the text size of the labes: username & password */
+.login__form p label {
+    /* text */
+    font-size: 2vw;
+}
+
+/* We edit the change the appearance and the size of the input fields for the login form */
+.login__form p input[type=text], select, .login__form p input[type=password], select {
+    /* appearance */
+    border: 1px solid rgb(47, 114, 123);
+    border-radius: 4px;
+
+    /* size */
+    box-sizing: border-box;
+    height: 30px;
+    width: 83%;
+}
+
+/* We edit the appearance and the size of the login button. In addition we edit the buttons text size and boldness */
+.login__form p input[type=submit] {
+    /* text */
+    font-size: 130%;
+    font-weight: 600;
+
+    /* appearance */
+    border-radius: 6px;
+    border-color: #e7e7e7f0;
+
+    /* size */
+    width: 25%;
+    height: 35px;
+}
+
+/* We edit the appearance of the login button when the user's cursor hovers over the login button */
+.login__form p input[type=submit]:hover {
+    /* appearance */
+    background-color: #f3f3f3d6;
+    box-shadow: 2px 2px 2px #000;
+}
+
+
+
+
+
+/* *********************************************************************************************************************** */
+
+/* Tablet Screen */
+@media screen and (max-width: 760px) and (min-width: 321px) {
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Body */
+    /* Editing the backgroung color of the webpage*/
+    /* We have 2 cells in the grid : grid__header, grid__main and grid__footer and each one of the cells has a width of 1fr.
+    By using fr we make our website responsive */
+    body {
+        font-size: 90%;
+        background-color: #333333;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "grid__header"
+            "grid__main"
+            "grid__footer";
+    }
+
+   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Header */
+
+    /* We changed the height*/
+    header {
+        /* grid */
+        grid-area: grid__header;
+
+        /* flex */
+        display: flex;
+    
+        /* position */
+        position: fixed;
+        top: 0;
+        margin-bottom: 100vw;
+        
+        /* responsive */
+        width: 100%;
+        
+        /* appearance */
+        background-color: #24252a;
+    }
+
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Main */
+
+    /* Editing the font and color of the letters, as the space of the website
+    and the header  */
+    main {
+        /* grid */
+        grid-area: grid__main;
+        
+        /* text */
+        color: #ccc;
+        font-family: sans-serif;
+
+        /* position */
+        margin-top: 8em;
+    }
+
+    /* Editing the title at the top of each page */
+    main h1 {
+        /* text */
+        font-size: 8vw;
+
+        /* position */
+        padding-bottom: 5%;
+    }
+
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Footer */
+
+    /* Editing the footer's website: adding the backround color, the font and color of the letters, the space bettween the box and the letters 
+    the width and the height*/
+    footer {
+        /* grid */
+        grid-area: grid__footer;
+    }
+
+    /* We add flex direction column so each item can be displayed in a column  */
+    .footer__top {
+        flex-direction: column;
+    }
+
+    /*We change the font size*/
+    .footer__top h3 {
+        font-size: 4vw;
+    }
+
+    /* We change the size of the letters */
+    .footer__top p {
+        font-size: 3vw;
+    }
+
+    /*We make the margin responsive*/
+    .footer__contact__info {
+        margin: 0 3%;
+
+    }
+    /* We make the margin responsive*/
+    .footer__socials {
+        margin: 0 3%;
+    }
+
+    /* We change the font size */
+    .footer__contact__info li a {
+        font-size: 3vw;
+    }
+
+    /* We change the font size*/
+    .footer__contact__info li a:hover {
+        font-size: 3vw;
+    }
+
+    /* We make margin responsive */
+    .footer__social__links li {
+        margin: 0 2%;
+    }
+
+    /* We change the width */
+    .footer__socials li img {
+        width: 60%;
+    }
+
+    /* We change the font size */
+    .footer__bottom h6 {
+        font-size: 3vw;
+    }
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    /* We change the text size of the title of each category */
+    .list li h2 {
+        /* text */
+        font-size: 5vw;
+    }
+
+    /* We change the size of the category's images */
+    .list li a img {
+        /* size */
+        width: 80%;
+        height: auto;
+
+        /* position */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* We change the size of the product's image */
+    .product_image {
+        /* size */
+        width: 95%;
+        height: auto;
+
+        /* position */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* We change the size of the description header */
+    .products h3 {
+        /* text */
+        font-size: 4vw;
+    }
+
+    /* We change the text size and the border's max width */
+    .description {
+        /* text */
+        font-size: 2.5vw;
+
+        /* size */
+        max-width: 75%;
+    }
+
+    /* We change the text size of the product's price */
+    .price {
+        /* text */
+        font-size: 4vw;
+    }
+
+    /* We change the text size of the login button */
+    .login__form p label {
+        /* text */
+        font-size: 4vw;
+    }
+}
+
+
+
+/* *********************************************************************************************************************** */
+
+/* Phone Screen */
+@media screen and (max-width: 320px) {
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Body */
+
+    /* We have 3 cells in the grid : grid__header, grid__main and grid__footer and each one of the cells has a width of 1fr.
+    By using fr we make our website responsive */
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "grid__header"
+            "grid__main"
+            "grid__footer";
+    }
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Header */
+
+    /* We make the width responsive and change the height */
+    header {
+        /* grid */
+        grid-area: grid__header;
+
+        /* responsive */
+        width: 100%;
+    }
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Main */
+
+    /* The grid__main is the second cell out of 3. We use grid-area to specify its location within the grid */
+    main {
+        /* grid */
+        grid-area: grid__main;
+    }
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    /* Footer */
+
+    /* The grid__footer is the second cell out of 3. We use grid-area to specify its location within the grid */
+    footer {
+        /* grid */
+        grid-area: grid__footer;
+    }
+
+    /* the items are placed in a column */
+    .footer__top {
+        /* flex */
+        flex-direction: column;
+    }
+
+    /* We change the size of the letters */
+    .footer__top h3 {
+        font-size: 4vw;
+    }
+
+
+    /* We change the size of the letters */
+    .footer__top p {
+        font-size: 3vw;
+    }
+
+    /* We make the margin responsive*/
+    .footer__contact__info {
+        margin: 0 3%;
+
+    }
+    /* We make the margin responsive*/
+    .footer__socials {
+        margin: 0 3%;
+    }
+
+    .footer__contact__info li a {
+        font-size: 4vw;
+    }
+
+    .footer__contact__info li a:hover {
+        font-size: 4vw;
+    }
+
+    /* Editing the space between the images in the list */
+    .footer__social__links li {
+        margin: 0 2%;
+    }
+
+    /* We make the margin responsive and change the height*/
+    .footer__socials li img {
+        width: 70%;
+        height: auto;
+    }
+
+    /* We change the size of the letters */
+    .footer__bottom h6 {
+        font-size: 3vw;
+    }
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    /* We change the text size of the title of each category */
+    .list li h2 {
+        /* text */
+        font-size: 5vw;
+    }
+
+    /* We change the size of the category's images */
+    .list li a img {
+        /* size */
+        width: 90%;
+        height: auto;
+
+        /* position */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* We change the size of the product's image */
+    .product_image {
+        /* size */
+        width: 90%;
+        height: auto;
+
+        /* position */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* We change the size of the description header */
+    .products h3 {
+        /* text */
+        font-size: 4vw;
+    }
+
+    /* We change the text size and the border's max width */
+    .description {
+        /* text */
+        font-size: 2.5vw;
+
+        /* size */
+        max-width: 95%;
+    }
+
+    /* We change the text size of the product's price */
+    .price {
+        /* text */
+        font-size: 4vw;
+    }
+
+    /* We change the text size of the login button */
+    .login__form p label {
+        /* text */
+        font-size: 4vw;
+    }
+}
